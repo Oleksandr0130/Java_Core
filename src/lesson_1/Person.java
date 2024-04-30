@@ -6,7 +6,13 @@ public class Person {
     public int height;
 
     public Person(){
+        name = "Peter";
+        age = 60;
+    }
 
+    public Person(String name, int age){
+        this.name = name;
+        this.age = age;
     }
 
     public Person(String name, int age, int height) {
