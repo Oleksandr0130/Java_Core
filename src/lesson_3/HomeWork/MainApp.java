@@ -16,7 +16,7 @@ public class MainApp {
             handler.add(value);
             System.out.println("Введите 0 для завершения" + handler);
         }
-
+        System.out.println(handler.get(5));
         System.out.println("Массив: " + handler);
         System.out.println("Сумма элементов: " + handler.sum());
     }
