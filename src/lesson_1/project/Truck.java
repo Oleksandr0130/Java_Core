@@ -38,7 +38,7 @@ public class Truck {
     }
 
     public void load (double load){
-        if (currentLoad > liftingCapacity) {
+        if (currentLoad + load >= liftingCapacity) {
             System.out.println("Нельзя загрузить такой вес");
         }else {
             currentLoad += load;
