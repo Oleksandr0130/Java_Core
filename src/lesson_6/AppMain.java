@@ -3,7 +3,8 @@ package lesson_6;
 import java.util.ArrayList;
 import java.util.List;
 
-import static lesson_6.Shape.*;
+import static lesson_6.ShapeUtil.*;
+
 
 public class AppMain {
     public static void main(String[] args) {
