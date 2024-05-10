@@ -1,6 +1,6 @@
 package lesson_5.HomeWork;
 
-public class Vehicle {
+public abstract class Vehicle {
     private String plateNumber;
     private String manufacturer;
     private int year;
