@@ -1,6 +1,8 @@
 package lesson_7.HomeWork.Task2;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class PersonList {
     public static class Person {
@@ -44,37 +46,23 @@ public class PersonList {
         return count;
     }
 
-    public static Map<String, Integer> countOccurrences(List<Person> persons) {
-        Map<String, Integer> nameCounts = new HashMap<>();
-        for (Person person : persons) {
-            String name = person.getName();
-            nameCounts.put(name, nameCounts.getOrDefault(name, 0) + 1);
-        }
-        return nameCounts;
-    }
-
     public static void main(String[] args) {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("Alice", 25));
-        persons.add(new Person("Bob", 30));
         persons.add(new Person("Alice", 25));
         persons.add(new Person("Alice", 25));
-        persons.add(new Person("Bob", 30));
-        persons.add(new Person("Charlie", 20));
+        persons.add(new Person("John",20));
+        persons.add(new Person("John",20));
+        persons.add(new Person("John",20));
+        persons.add(new Person("John",20));
 
-        Person targetPerson = new Person("Lina", 30);
-        Person targetPerson1 = new Person("Bob", 30);
+        Person targetPerson = new Person("Alice", 25);
+        Person targetPerson2 = new Person("John",20);
+
         int value = countOccurrences(persons, targetPerson);
+        int value1 = countOccurrences(persons, targetPerson2);
 
         System.out.println("Повторяющиеся имена " + targetPerson.getName() + ": " + value);
-        System.out.println("Повторяющиеся имена " + targetPerson1.getName() + ": " + value);
-
-        Map<String, Integer> nameCounts = countOccurrences(persons);
-        for (Map.Entry<String, Integer> entry : nameCounts.entrySet()) {
-            if (entry.getValue() > 1) {
-                System.out.println("Имя: " + entry.getKey() + ", Количество: " + entry.getValue());
-            }
-        }
-
+        System.out.println("Повторяющиеся имена " + targetPerson2.getName() + ": " + value1);
     }
 }
