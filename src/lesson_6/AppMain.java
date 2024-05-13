@@ -15,13 +15,11 @@ public class AppMain {
         shapes.add(new Square(4));
         shapes.add(new Rectangle(13, 16));
 
-        double totalArea = getTotalArea(shapes);
-        System.out.println("Общая площадь: " + totalArea);
 
-        Shape largest = getLargestShape(shapes);
-        if (largest != null) {
-            System.out.println("Самая большая площадь формы: " + largest.getArea() + largest.toString());
-        }
+        System.out.println("Общая площадь: " + ShapeUtil.getTotalArea(shapes));
+
+        System.out.println("Самая большая площадь формы: " + ShapeUtil.getLargestShape(shapes).getArea() + getLargestShape(shapes).toString());
+
 
         List<Shape> largeShapes = getShapesWithAreaGreaterThan(shapes, 20);
         System.out.println("Фигуры с площадью больше 20:");
