@@ -22,10 +22,10 @@ public class Person {
         return age;
     }
 
-    public static List<String> getNames(List<Person> persons) {
+    public static List<String> getNames(List<Person> persons, int ageLimit) {
         List<String> names = new ArrayList<>();
         for (Person person : persons) {
-            if (person.getAge() > 20) {
+            if (person.getAge() > ageLimit) {
                 names.add(person.getName());
             }
         }
@@ -43,7 +43,7 @@ public class Person {
         persons.add(new Person("Karl", 30));
         persons.add(new Person("Karl", 30));
 
-        List<String> name = Person.getNames(persons);
+        List<String> name = Person.getNames(persons, 20);
         System.out.println("Имена пользователей старше 20 лет: " + name);
 
     }
