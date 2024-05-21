@@ -9,23 +9,33 @@ public class PostApp {
                 new Email(),
                 new Pigeon()
         };
-        MailDeliveryService service = selectService(services);
-        if (service != null){
-            sendMail(service);
+
+        boolean isContinue = true;
+        while(isContinue) {
+            MailDeliveryService service = selectService(services);
+            if (service != null) {
+                sendMail(service);
+            }
+        isContinue = isContinue();
         }
+    }
+    public static boolean isContinue(){
+        System.out.println("0 - exit");
+        Scanner scanner = new Scanner(System.in);
+        return (scanner.nextInt() == 0? false : true);
     }
 
     public static MailDeliveryService selectService(MailDeliveryService[] services){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выберите способ отправки");
         for (int i = 0; i < services.length; i++) {
-            System.out.println(i + " " + services[i].getServiceName());
+            System.out.println((i + 1) + " " + services[i].getServiceName());
         }
         int choice = scanner.nextInt();
         if (choice < 0 || choice >= services.length){
             return null;
         }else {
-            return services[choice];
+            return services[choice - 1];
         }
     }
     public static void sendMail(MailDeliveryService service){
