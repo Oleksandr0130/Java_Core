@@ -1,4 +1,4 @@
-package lesson_14.HomeWork;
+package lesson_14.Task1;
 /*
 Дана строка следующего вида:
 Ivan Ivanov;Oleg Petrov;Anna Kovaleva
@@ -13,8 +13,6 @@ I.Ivanov;O.Petrov;A.Kovaleva
 Теперь все получившиеся строки нужно склеить в одну, естественно, используя StringBuilder
 
  */
-import java.util.ArrayList;
-import java.util.List;
 
 public class Task1 {
     public static void main(String[] args) {
