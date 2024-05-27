@@ -1,4 +1,4 @@
-package lesson_16.Hwtask2.ClassWork;
+package lesson_16.ClassWork;
 
 import java.util.Comparator;
 

@@ -1,4 +1,6 @@
-package lesson_16.Hwtask2;
+package lesson_16.ClassWork;
+
+import java.util.Objects;
 
 /*
 Дан List<Employee>.
@@ -25,8 +27,22 @@ public class Employee {
         return year;
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return year == employee.year && Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, year);
+    }
+
     @Override
     public String toString() {
-        return  name + " -> (" + year + ")";
+        return  name + " (" + year + ") ";
     }
 }
