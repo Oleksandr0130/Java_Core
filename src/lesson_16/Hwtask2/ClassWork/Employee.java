@@ -13,10 +13,12 @@ import java.util.Objects;
 public class Employee {
     private String name;
     private int year;
+    private int yearOfWork;
 
-    public Employee(String name, int year) {
+    public Employee(String name, int year, int yearOfWork) {
         this.name = name;
         this.year = year;
+        this.yearOfWork = yearOfWork;
     }
 
     public String getName() {
@@ -27,21 +29,25 @@ public class Employee {
         return year;
     }
 
+    public int getYearOfWork() {
+        return yearOfWork;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return year == employee.year && Objects.equals(name, employee.name);
+        return year == employee.year && yearOfWork == employee.yearOfWork && Objects.equals(name, employee.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, year);
+        return Objects.hash(name, year, yearOfWork);
     }
 
     @Override
     public String toString() {
-        return  name + " (" + year + ')';
+        return  name + " (" + year + ") " + yearOfWork;
     }
 }
