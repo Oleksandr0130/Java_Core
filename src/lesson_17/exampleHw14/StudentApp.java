@@ -2,6 +2,7 @@ package lesson_17.exampleHw14;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class StudentApp {
@@ -16,8 +17,9 @@ public class StudentApp {
         students.add(new Student("Olga", 6, 9, 10, 2, 4, 8, 7, 10, 10, 10));
 
 //        System.out.println(students);
-        Collections.sort(students, new ComparatorStudentByShortFall());
-        System.out.println(studentsToString(students));
+//        Collections.sort(students, new ComparatorStudentByShortFall());
+//        System.out.println(listToString(students));
+        System.out.println(studentToString(students));
 
 
 //        Student student = new Student("John");
@@ -31,7 +33,19 @@ public class StudentApp {
 //        System.out.println(student);
 //        student.getSumOfGrades();
     }
-    public static String studentsToString (List<Student> studentList){
+    
+    public static String studentToString(List<Student> studentList){
+        List<Student> sortedList = createSortedCopy(studentList,new ComparatorStudentByShortFall());
+        return listToString(sortedList);
+    }
+
+    private static List<Student> createSortedCopy(List<Student> list, Comparator<Student> comparator) {
+        ArrayList<Student> result = new ArrayList<>(list);
+        Collections.sort(result, comparator);
+        return result;
+    }
+
+    public static String listToString(List<Student> studentList){
         StringBuilder sb = new StringBuilder();
         for (Student student : studentList){
             sb.append(student.getName()).append(" - ").append(student.getShortfall()).append(";");

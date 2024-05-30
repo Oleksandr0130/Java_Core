@@ -1,5 +1,7 @@
 package lesson_16.ClassWork;
 
+import lesson_16.Employee;
+import lesson_16.Main;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
