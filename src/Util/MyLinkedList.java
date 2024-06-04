@@ -1,9 +1,30 @@
 package Util;
 
+import java.util.Iterator;
+
 public class MyLinkedList<T> implements MyList<T>{
     private Node<T> first = null;
     private Node<T> last = null;
     private int size = 0;
+
+    @Override
+    public Iterator iterator() {
+        return this.new MyListIterator();
+    }
+    private class MyListIterator implements Iterator<T>{
+        private Node<T> current = first;
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public T next() {
+            T value = current.getValue();
+            current = current.getNext();
+            return value;
+        }
+    }
 
     @Override
     public boolean add(T element) {
@@ -20,7 +41,29 @@ public class MyLinkedList<T> implements MyList<T>{
     }
 
     @Override
-    public boolean add(int index, T element) {
+    public boolean addFisrtorMiddleorLast(int index, T element) {
+        if (index >= size){
+            return add(element);
+        }
+        Node<T> node = new Node<>(null, null, element);
+            size++;
+
+        Node<T> next = getNode(index);
+        next = next == null ? first : next;
+
+        Node<T> prev = next.getPrev();
+            next.setPrev(node);
+            node.setNext(next);
+            node.setPrev(prev);
+        if (prev != null){ // вставляем в середину
+            prev.setNext(node);
+
+        }else { // вставляем ноду в начало
+            first = node;
+        }
+        return true;
+    }
+    public boolean addAfterRemoving(int index, T element){
         if (index == 0) {
             Node<T> newNode = new Node<>(null, first, element);
             first.setPrev(newNode);
@@ -41,6 +84,10 @@ public class MyLinkedList<T> implements MyList<T>{
 
         size++;
         return true;
+    }
+
+    public boolean isEmpty(){
+        return  first == null;
     }
 
     @Override

@@ -1,8 +1,9 @@
 package Util;
 
-public interface MyList<T> {
+public interface MyList<T> extends Iterable {
     boolean add (T element);
-    boolean add (int index, T element);
+    boolean addFisrtorMiddleorLast (int index, T element);
+    boolean addAfterRemoving (int index, T element);
     T get(int index);
     int size();
     T removeFirstElement();

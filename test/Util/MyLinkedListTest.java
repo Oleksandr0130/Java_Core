@@ -28,7 +28,7 @@ class MyLinkedListTest {
         list.add("John");
         list.add("Nick");
         list.remove(1);
-        list.add(1,"Anna");
+        list.addAfterRemoving(1,"Anna");
         Assertions.assertEquals(3,list.size());
         Assertions.assertEquals("Jack", list.get(0));
         Assertions.assertEquals("Anna", list.get(1));
