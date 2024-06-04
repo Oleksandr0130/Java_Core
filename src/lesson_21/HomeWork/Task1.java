@@ -22,10 +22,10 @@ public class Task1 {
     }
 
     public static void removeFromListIterator (List<String> list){
-        ListIterator<String> listIterator = list.listIterator();
-        while (listIterator.hasNext()){
-            if (listIterator.next().startsWith("_")){
-                listIterator.remove();
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()){
+            if (iterator.next().startsWith("_")){
+                iterator.remove();
             }
         }
     }
