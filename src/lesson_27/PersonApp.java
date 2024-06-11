@@ -1,4 +1,4 @@
-package lesson_26.HomeWork;
+package lesson_27;
 
 
 /*
@@ -14,6 +14,7 @@ package lesson_26.HomeWork;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class PersonApp {
@@ -58,9 +59,16 @@ public class PersonApp {
                 .filter(person -> person.getName().length() == 4)
                 .collect(Collectors.toList());
         System.out.println(filterByNameLength + "\n");
+
+        System.out.println("---------filter2--------------");
+        List<Person> filter2 = filter(personList, p -> p.getName().length() > 4);
+        System.out.println(filter2);
+        System.out.println("---------filter3--------------");
+        List<Integer> filter3 = filter(List.of(1, 3, 4, -2, 3), i -> i % 2 == 0);
+        System.out.println(filter3);
     }
-    
-    public static List<Person> filter(List<Person> personList, MyPredicate predicate){
+
+    public static <T> List<T> filter(List<T> personList, Predicate<T> predicate){
         return personList.stream()
                 .filter(predicate :: test)
                 .collect(Collectors.toList());
