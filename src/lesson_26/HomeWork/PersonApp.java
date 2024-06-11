@@ -21,9 +21,11 @@ public class PersonApp {
         List<Person> personList = new ArrayList<>();
         personList.add(new Person("Jack", 20));
         personList.add(new Person("Ann", 30));
-        personList.add(new Person("Nick", 35));
+        personList.add(new Person("Nickolai", 35));
         personList.add(new Person("Ivan", 15));
         personList.add(new Person("Alice", 25));
+        personList.add(new Person("Aleksander", 40));
+        personList.add(new Person("Kiril", 28));
 
         List<Person> filterByName = filter(personList, p -> p.getName().startsWith("A"));
         System.out.println(filterByName);
@@ -40,6 +42,11 @@ public class PersonApp {
                         .sorted(Comparator.comparingInt(Person::getAge))
                                 .collect(Collectors.toList());
         System.out.println(sortedPersonList);
+
+        List<Person> sortedByNameLength = personList.stream()
+                .sorted(Comparator.comparingInt(p -> p.getName().length()))
+                .collect(Collectors.toList());
+        System.out.println(sortedByNameLength);
     }
     
     public static List<Person> filter(List<Person> personList, MyPredicate predicate){
