@@ -16,14 +16,12 @@ public class CohortApp {
     public static void main(String[] args) {
         List<Cohort> cohorts = List.of(
                 new Cohort("Group 1", Arrays.asList(
-                        new Cohort.Student("Jack", Arrays.asList("jack@example.com")),
-                        new Cohort.Student("Jack", Arrays.asList("jack@example.com")),
-                        new Cohort.Student("Ann", Arrays.asList("ann@example.com"))
+                        new Cohort.Student("Jack", Arrays.asList("jack@example.com", "jack@example.com")),
+                        new Cohort.Student("Ann", Arrays.asList("ann@example.com", "ann@example.com"))
                 )),
                 new Cohort("Group 2", Arrays.asList(
-                        new Cohort.Student("John", Arrays.asList("john@example.com")),
-                        new Cohort.Student("Lena", Arrays.asList("Lena@example.com")),
-                        new Cohort.Student("Lena", Arrays.asList("Lena@example.com"))
+                        new Cohort.Student("John", Arrays.asList("john@example.com", "john@example.com")),
+                        new Cohort.Student("Lena", Arrays.asList("Lena@example.com", "jack@example.com"))
                 )));
         System.out.println(cohorts);
         System.out.println(getUniqueEmails(cohorts));
