@@ -1,7 +1,6 @@
 package lesson_28.HomeWork.Task1;
 
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
