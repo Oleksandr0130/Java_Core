@@ -1,4 +1,4 @@
-package lesson_30.HomeWork;
+package lesson_30.HomeWork.Task3;
 
 import java.util.Scanner;
 
@@ -13,25 +13,26 @@ public class Task3 {
     public static void main(String[] args) {
         sumInt();
     }
-    public static void sumInt(){
+
+    public static void sumInt() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
         try {
             System.out.println("Input int or 0 for exit");
-            while (true){
+            while (true) {
                 System.out.print("Input int: ");
                 try {
-                int input = scanner.nextInt();
-                    if (input == 0){
+                    int input = scanner.nextInt();
+                    if (input == 0) {
                         break;
                     }
                     sum += input;
-                }catch (Exception e){
+                } catch (Exception e) {
                     System.out.println("Uncorrect input try input correct int");
                     scanner.nextLine();
                 }
             }
-        }finally {
+        } finally {
             System.out.println("Sum of int: " + sum);
             scanner.close();
         }
