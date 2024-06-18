@@ -1,5 +1,8 @@
 package lesson_31;
 
+import lesson_31.ExceptionsForTask3.Input100Exception;
+import lesson_31.ExceptionsForTask3.InputNotIntNumberException;
+
 import java.util.Scanner;
 
 /*
