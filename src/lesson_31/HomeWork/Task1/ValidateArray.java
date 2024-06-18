@@ -1,4 +1,9 @@
 package lesson_31.HomeWork.Task1;
+
+import lesson_31.HomeWork.Task1.Exceptions.ArrayIsNull;
+import lesson_31.HomeWork.Task1.Exceptions.ArrayMustHave10Rows;
+import lesson_31.HomeWork.Task1.Exceptions.EachRowMustHave10Columns;
+
 /*
 Допустим, Ваш метод должен получить массив int размером 10x10 элементов.
 Необходимо, что бы ваш метод бросал IllegalArgumentException
@@ -16,6 +21,12 @@ public class ValidateArray {
         testArray(invalidArray);
         testArray(nullArray);
         testArray(invalidColumnsArray);
+        for (int i = 0; i < validArray.length; i++) {
+            for (int j = 0; j < validArray.length; j++) {
+        System.out.print(validArray[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
 
     public static void validateArray(int[][] array) {

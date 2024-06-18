@@ -1,12 +1,17 @@
 package lesson_31.HomeWork.Task2;
 
+import lesson_31.HomeWork.Task2.Exceptions.AllProgrammersAreBusyNowException;
+import lesson_31.HomeWork.Task2.Exceptions.ProgrammerBusyException;
+import lesson_31.HomeWork.Task2.Exceptions.ProgrammerUnavailableNowException;
+import lesson_31.HomeWork.Task2.Exceptions.TeamLeadUnavailableNowException;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class ProgrammerApp {
     public static void main(String[] args) {
         Programmer programmer1 = new Programmer("Jack", "занят");
-        Programmer programmer2 = new Programmer("John", "не доступен");
+        Programmer programmer2 = new Programmer("John", "доступен");
         Programmer programmer3 = new Programmer("Jack", "не доступен");
 
         programmerDoWork(programmer1,"write code");

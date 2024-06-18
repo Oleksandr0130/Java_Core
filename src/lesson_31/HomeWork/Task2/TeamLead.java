@@ -1,5 +1,10 @@
 package lesson_31.HomeWork.Task2;
 
+import lesson_31.HomeWork.Task2.Exceptions.AllProgrammersAreBusyNowException;
+import lesson_31.HomeWork.Task2.Exceptions.ProgrammerBusyException;
+import lesson_31.HomeWork.Task2.Exceptions.ProgrammerUnavailableNowException;
+import lesson_31.HomeWork.Task2.Exceptions.TeamLeadUnavailableNowException;
+
 import java.util.List;
 /*
  Допустим, у вас в программе есть TeamLead, который  тоже может быть «доступен» и «не доступен»,
@@ -21,7 +26,7 @@ public class TeamLead {
         this.status = status;
         this.team = team;
     }
-    public String doTask(String taskMsg) throws TeamLeadUnavailableNowException, AllProgrammersAreBusyNowException{
+    public String doTask(String taskMsg) throws TeamLeadUnavailableNowException, AllProgrammersAreBusyNowException {
         if ("не доступна".equals(status)){
             throw new TeamLeadUnavailableNowException();
         }

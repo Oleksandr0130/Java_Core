@@ -9,6 +9,9 @@ package lesson_31.HomeWork.Task2;
 
  */
 
+import lesson_31.HomeWork.Task2.Exceptions.ProgrammerBusyException;
+import lesson_31.HomeWork.Task2.Exceptions.ProgrammerUnavailableNowException;
+
 public class Programmer {
     private String name;
     private String status;
@@ -17,7 +20,7 @@ public class Programmer {
         this.name = name;
         this.status = status;
     }
-    public String doWork(String taskMsg) throws ProgrammerBusyException, ProgrammerUnavailableNowException{
+    public String doWork(String taskMsg) throws ProgrammerBusyException, ProgrammerUnavailableNowException {
         if ("занят".equals(status)){
             throw new ProgrammerBusyException();
         } else if ("не доступен".equals(status)) {
