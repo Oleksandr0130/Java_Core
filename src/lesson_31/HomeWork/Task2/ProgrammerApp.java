@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ProgrammerApp {
     public static void main(String[] args) {
-        Programmer programmer1 = new Programmer("Jack", "не доступен");
+        Programmer programmer1 = new Programmer("Jack", "занят");
         Programmer programmer2 = new Programmer("John", "не доступен");
         Programmer programmer3 = new Programmer("Jack", "не доступен");
 
@@ -15,12 +15,12 @@ public class ProgrammerApp {
 
         List<Programmer> team = Arrays.asList(programmer1,programmer2,programmer3);
 
-        TeamLead teamLead = new TeamLead("Ann", "Доступна", team);
+        TeamLead teamLead = new TeamLead("Ann", "доступна", team);
 
-        teamLeadDoWork(teamLead,"give work for programmer");
+        teamLeadDoTask(teamLead,"give work for programmer");
         teamLead.setStatus("не доступна");
-        teamLeadDoWork(teamLead,"Update code");
-        teamLeadDoWork(teamLead,"Write code");
+        System.out.println(teamLead.getStatus());
+        teamLeadDoTask(teamLead,"Update code");
     }
 
     private static void programmerDoWork(Programmer programmer, String taskMsg){
@@ -32,7 +32,7 @@ public class ProgrammerApp {
         }
     }
 
-    public static void teamLeadDoWork(TeamLead teamLead, String taskMsg){
+    public static void teamLeadDoTask(TeamLead teamLead, String taskMsg){
         try {
             String result = teamLead.doTask(taskMsg);
             System.out.println(result);

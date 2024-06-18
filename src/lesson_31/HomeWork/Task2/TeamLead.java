@@ -10,7 +10,6 @@ import java.util.List;
  либо AllProgrammersAreBusyNowException (не нашлось доступных пронраммистов).
  В зависимости от результата, вызывающий main выводить результат работы
  или сообщение «Нам не хватает программистов!» или «Почему TeamLead не на месте».
-
  */
 public class TeamLead {
     private String name;
@@ -23,7 +22,7 @@ public class TeamLead {
         this.team = team;
     }
     public String doTask(String taskMsg) throws TeamLeadUnavailableNowException, AllProgrammersAreBusyNowException{
-        if ("не доступен".equals(status)){
+        if ("не доступна".equals(status)){
             throw new TeamLeadUnavailableNowException();
         }
         for (Programmer programmer : team){
