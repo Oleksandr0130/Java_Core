@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ProgrammerApp {
     public static void main(String[] args) {
-        Programmer programmer1 = new Programmer("Jack", "занят");
+        Programmer programmer1 = new Programmer("Jack", "не доступен");
         Programmer programmer2 = new Programmer("John", "доступен");
         Programmer programmer3 = new Programmer("Jack", "не доступен");
 

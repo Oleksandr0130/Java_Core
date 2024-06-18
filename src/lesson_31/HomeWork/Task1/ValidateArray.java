@@ -1,9 +1,4 @@
 package lesson_31.HomeWork.Task1;
-
-import lesson_31.HomeWork.Task1.Exceptions.ArrayIsNull;
-import lesson_31.HomeWork.Task1.Exceptions.ArrayMustHave10Rows;
-import lesson_31.HomeWork.Task1.Exceptions.EachRowMustHave10Columns;
-
 /*
 Допустим, Ваш метод должен получить массив int размером 10x10 элементов.
 Необходимо, что бы ваш метод бросал IllegalArgumentException
